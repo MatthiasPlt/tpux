@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nike e-commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+  <style>
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .pagination button:hover {
+      background-color: #ddd;
+    }
+
+    .pagination button.active {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+    .card {
+      display: none;
+    }
+
+    .card.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav>
+    <h1>Ecome</h1>
+    <div class="onglets">
+      <p class="link">Nouveautés</p>
+      <p class="link">Homme</p>
+      <p class="link">Femme</p>
+      <p class="link">Enfant</p>
+      <p class="link">Cadeaux</p>
+      <form>
+        <input type="search" placeholder="Rechercher">
+      </form>
+      <p><i class="far fa-heart"></i></p>
+      <p><i class="fas fa-shopping-cart"></i></p>
+    </div>
+  </nav>
+  <!-- Fin de la barre de navigation -->
+  
+  <!-- Header -->
+  <header>
+    <h1>C'est votre boutique, votre chez-vous.</h1>
+    <button>Naviguer <i class="fas fa-paper-plane"></i></button>
+  </header>
+  <!-- Fin du header -->
+  
+  <!-- Section principale -->
+  <section class="main">
+    <!-- Toutes les cartes -->
+    <div class="cards">
+      <div class="card visible">
+        <img src="https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/0697fd03-09fd-4b3b-be0b-11b009c671d9/short-en-molleton-sportswear-pour-z5Kgjx.jpg">
+        <div class="card-header">
+          <h4 class="title">Short Nike</h4>
+          <h4 class="price">199$</h4>
+        </div>
+        <div class="card-body">
+          <p>Short moulant pour homme</p>
+        </div>
+      </div>
+      <div class="card visible">
+        <img src="image/chaussure femme.png">
+        <div class="card-header">
+          <h4 class="title">Paire de chaussures stylées</h4>
+          <h4 class="price">69$</h4>
+        </div>
+        <div class="card-body">
+          <p>Des paires de chaussures stylées pour femme</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/abb537eb-0e70-4e1f-903e-ec46b8657c0d/short-de-training-en-tissu-fleece-dri-fit-pour-n97b2F.jpg">
+        <div class="card-header">
+          <h4 class="title">Short pour courir</h4>
+          <h4 class="price">39$</h4>
+        </div>
+        <div class="card-body">
+          <p>Sport pour courir en plain air pour homme</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="image/sac.png">
+        <div class="card-header">
+          <h4 class="title">Sac Nike Hayward</h4>
+          <h4 class="price">59$</h4>
+        </div>
+        <div class="card-body">
+          <p>Un sac à dos spacieux et durable</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="image/sweat.png">
+        <div class="card-header">
+          <h4 class="title">Sweat Nike Club Fleece</h4>
+          <h4 class="price">89$</h4>
+        </div>
+        <div class="card-body">
+          <p>Sweat à capuche confortable et stylé</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="image/airmax.png">
+        <div class="card-header">
+          <h4 class="title">Nike Air Max Excee</h4>
+          <h4 class="price">120$</h4>
+        </div>
+        <div class="card-body">
+          <p>Chaussures emblématiques pour un confort optimal</p>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de toutes les cartes -->
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="active" onclick="showPage(1)">1</button>
+      <button onclick="showPage(2)">2</button>
+      <button onclick="showPage(3)">3</button>
+    </div>
+    <!-- Fin de la pagination -->
+  </section>
+  <!-- Fin de la section principale -->
+  
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; Contactez-nous au 06 98 87 82 00</p>
+    <div class="social-media">
+      <p><i class="fab fa-facebook-f"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+      <p><i class="fab fa-instagram"></i></p>
+      <p><i class="fab fa-linkedin-in"></i></p>
+    </div>
+  </footer>
+  <!-- Fin du pied de page -->
+
+  <script>
+    const cardsPerPage = 2;
+    function showPage(pageNumber) {
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.pagination button');
+
+      cards.forEach((card, index) => {
+        card.classList.remove('visible');
+        if (index >= (pageNumber - 1) * cardsPerPage && index < pageNumber * cardsPerPage) {
+          card.classList.add('visible');
+        }
+      });
+
+      buttons.forEach(button => button.classList.remove('active'));
+      buttons[pageNumber - 1].classList.add('active');
+    }
+
+    // Initialisation
+    showPage(1);
+  </script>
+</body>
+</html>
