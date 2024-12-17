@@ -1,3 +1,8 @@
 bonjour monsieur il n'y a pas de base de donné dans mon projet
 car mon pc crash des que je lance wamp et ce probleme persiste
 depuis 1 semaine c'est pour ca que tout est codé en dure
+j'ai quand meme mit mon script php mais j'ai pas pu le tester et aussi 
+ma table de ma base de donné fait manuel car ne pouvant y acceder je ne peut donc pas
+l'exporter au format sql
+Merci bien de votre comprehension 
+Cordialement Matthias Pollet
