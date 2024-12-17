@@ -1,0 +1,3 @@
+bonjour monsieur il n'y a pas de base de donné dans mon projet
+car mon pc crash des que je lance wamp et ce probleme persiste
+depuis 1 semaine c'est pour ca que tout est codé en dure
